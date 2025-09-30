@@ -33,6 +33,23 @@ public class Arraytest {
 		}
 		initalizeARRAY(nums);
 		finmaxmin(nums);
+
+		float[] salaries = { 4.5f, 5.6f, 6.7f, 45.4484f };
+		salaries[0] = salaries[0] + 10;
+		System.out.println(salaries[0]);
+		salaries[1] = salaries[1] + 10;
+		System.out.println(salaries[1]);
+		salaries[2] = salaries[2] + 10;
+		System.out.println(salaries[2]);
+		salaries[3] = salaries[3] + 10;
+		System.out.println(salaries[3]);
+		// Automización del proceso con bucles
+
+		for (int i = 0; i < salaries.length; i++) {
+			salaries[i] = salaries[i] + 10;
+			System.out.println(" la automización de este proceso se hace así:" + salaries[i]);
+		}
+
 	}
 
 	private static void sumup() {
@@ -68,16 +85,16 @@ public class Arraytest {
 		for (int i = 0; i < nums.length; i++) {
 			nums[i] = random.nextInt(-1000000, 100000000);
 		}
+
 	}
 
 	private static void finmaxmin(int[] nums) {
 		int mayor = nums[0];
 		int menor = nums[0];
-/**
- * if the current maximun us less than the element
- * that we are accesing we change the maximun to
- * the value of the elemt
- */
+		/**
+		 * if the current maximun us less than the element that we are accesing we
+		 * change the maximun to the value of the elemt
+		 */
 		for (int i = 1; i < nums.length; i++) {
 			if (nums[i] > mayor) {
 				mayor = nums[i];
@@ -85,7 +102,7 @@ public class Arraytest {
 			if (nums[i] < menor) {
 				menor = nums[i];
 			}
-		
+
 		}
 
 		System.out.println("El número más grande es: " + mayor);
