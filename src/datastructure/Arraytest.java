@@ -1,12 +1,16 @@
 package datastructure;
 
 import java.lang.module.FindException;
+import java.security.cert.CertPathValidator;
+import java.util.Arrays;
 import java.util.Random;
 
 import oopmodeling.Planet;
 
 public class Arraytest {
 	public static void main(String[] args) {
+		int[] scores = { 12, 34, 3224, 32 };
+		int[] arr = { 1, 20, 40, 80 };
 
 		String[] name = { "pablo", "diego", "jorge" };
 		Planet[] planet = { new Planet(), new Planet() };
@@ -33,7 +37,6 @@ public class Arraytest {
 		}
 		initalizeARRAY(nums);
 		finmaxmin(nums);
-
 		float[] salaries = { 4.5f, 5.6f, 6.7f, 45.4484f };
 		salaries[0] = salaries[0] + 10;
 		System.out.println(salaries[0]);
@@ -50,6 +53,85 @@ public class Arraytest {
 			System.out.println(" la automización de este proceso se hace así:" + salaries[i]);
 		}
 
+		switchvalues(scores, 0, 2);
+		incrementsalary();
+		reverse(arr);
+		System.out.println(Arrays.toString(scores));
+		int[] sliced = slice(scores, 0, 2);
+
+	}
+
+	private static int[] slice(int[] arr, int start, int end) {
+		
+		
+		System.out.println(Arrays.toString(arr));
+		int[] result = new int[end - start +1];
+		
+		System.out.println(Arrays.toString(result));
+		for (int i = 0; i < result.length; i++) {
+			result[i] = arr[start + i];
+			
+		}
+		if (arr ==null) {
+			return null;
+		}
+		if (start < 0 || end < 0 || start >= arr.length || end >= arr.length) {
+			return null;
+		}
+		if (start > end) {
+			return null;
+		}
+		System.out.println(Arrays.toString(result));
+		return result;
+	}
+
+	private static int[] reverse(int[] list) {
+		int[] nuevo = new int[list.length];
+
+		for (int j = 0; j < nuevo.length; j++) {
+//			nuevo[nuevo.length -1] = list[0];
+//			nuevo[nuevo.length -2] = list[1];
+//			nuevo[nuevo.length -3] = list[2];
+//			nuevo[nuevo.length -4] = list[3];
+			nuevo[nuevo.length - 1 - j] = list[j];
+		}
+//		int j = 0;
+//		
+//		nuevo[nuevo.length -1 - j] = list[j];
+//		j++;
+//		
+//		
+//		nuevo[nuevo.length -1 - j] = list[j];
+//		j++;
+//		
+//		nuevo[nuevo.length -1 - j] = list[j];
+//		j++;
+//		
+//		nuevo[nuevo.length -1 - j] = list[j];
+//		j++;
+
+		System.out.println(Arrays.toString(nuevo));
+
+		return nuevo;
+	}
+
+	private static void switchvalues(int[] arr, int index1, int index2) {
+		int temp = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = temp;
+
+		System.out.println(Arrays.toString(arr));
+		if (arr == null) {
+			return;
+
+		}
+		if (index1 < 0 || index2 < 0) {
+			return;
+		}
+		int dato = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = dato;
+		System.out.println(dato);
 	}
 
 	private static void sumup() {
@@ -76,6 +158,10 @@ public class Arraytest {
 		System.out.println(scores[3]);// ejecuta el cuatro numero de scores
 
 		System.out.println("La suma de todos los numero es: " + suma);
+	}
+
+	private static void incrementsalary() {
+
 	}
 
 	private static void initalizeARRAY(int[] nums) {

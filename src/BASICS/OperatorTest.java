@@ -41,6 +41,8 @@ public class OperatorTest {
 		System.out.println(result);
 		result += number1;// result = result1 + result2
 		System.out.println(result);
+		result /= number1;//result = result /number1
+		System.out.println(result);
 
 	}
 
