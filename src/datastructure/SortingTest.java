@@ -1,24 +1,30 @@
 package datastructure;
 
-import java.util.Arrays;
+	import java.util.Arrays;
 
-public class SortingTest {
-	public static void main(String[] args) {
-		String[] names = { "diego", "jorge", "Ruben", "Papu", "Enrique" };
-		int[] scores = { 12, 24, 3232, 323, 3232, 323323, 32323, 323 };
-		Arrays.sort(scores);
-		Sort(scores);
+	public class SortingTest {
+	    public static void main(String[] args) {
+	        int[] scores = { 12, 24, 3232, 323, 3232, 32332, 32323, 323 };
+	        String[] name = { "pablo", "diego", "jorge" };
+	        sort(scores);
+	        System.out.println("Final sorted array: " + Arrays.toString(scores));
+	    }
 
+	    private static void sort(int[] arr) {
+	        int j = 0;
+
+	        while (j < arr.length - 1) {
+	            for (int i = 0; i < arr.length - 1 - j; i++) {
+	                int previous = arr[i];
+	                int next = arr[i + 1];
+
+	                if (previous > next) {
+	                    Arraytest.switchvalues(arr, i, i);
+	                    System.out.println("el array es " + Arrays.toString(arr));
+	                }
+	                
+	            }
+	            j++;
+	        }
+	    }
 	}
-
-	private static void Sort(int [] arr) {
-		int guardar =  arr[0];
-		for (int i = 0; i < arr.length; i++) {
-			if( arr[i] < arr[i]);
-				arr[i] = arr[i];
-				arr[1] = guardar;
-		System.out.println(Arrays.toString(arr));
-			
-		}
-	}
-}
