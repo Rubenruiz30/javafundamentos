@@ -18,6 +18,7 @@ public class SortingTest {
 				arr[i] = arr[i];
 				arr[1] = guardar;
 		System.out.println(Arrays.toString(arr));
+
 			
 		}
 	}
