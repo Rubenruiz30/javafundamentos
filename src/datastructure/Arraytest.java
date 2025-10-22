@@ -115,12 +115,7 @@ public class Arraytest {
 		return nuevo;
 	}
 
-	private static void switchvalues(int[] arr, int index1, int index2) {
-		int temp = arr[index1];
-		arr[index1] = arr[index2];
-		arr[index2] = temp;
-
-		System.out.println(Arrays.toString(arr));
+	public static void switchvalues(int[] arr, int index1, int index2) {
 		if (arr == null) {
 			return;
 
@@ -128,10 +123,17 @@ public class Arraytest {
 		if (index1 < 0 || index2 < 0) {
 			return;
 		}
+		
+//		int temp = arr[index1];
+//		arr[index1] = arr[index2];
+//		arr[index2] = temp;
+//
+//		System.out.println(Arrays.toString(arr));
+		
 		int dato = arr[index1];
 		arr[index1] = arr[index2];
 		arr[index2] = dato;
-		System.out.println(dato);
+//		System.out.println(dato);
 	}
 
 	private static void sumup() {
