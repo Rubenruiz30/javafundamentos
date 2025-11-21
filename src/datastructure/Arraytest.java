@@ -6,6 +6,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 import oopmodeling.Planet;
+/**
+ * 
+ *@author david
+ *@author Rubén
+ *21 nov 2025
+ */
+/*
+ * Venatas: es más veloz y eficiente, menor complejidad en la gestión de memoria y menor uso de recursos
+ * Desventajas que una vez creado el array no se puede expandir(Menos flexibles)lkp
+ * */
 
 public class Arraytest {
 	public static void main(String[] args) {
@@ -13,6 +23,8 @@ public class Arraytest {
 		int[] arr = { 1, 20, 40, 80 };
 
 		String[] name = { "pablo", "diego", "jorge" };
+		System.out.println(name);
+		System.out.println(name[1]);
 		Planet[] planet = { new Planet(), new Planet() };
 		for (int i = 0; i < planet.length; i++) {
 

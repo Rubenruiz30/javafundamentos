@@ -34,7 +34,7 @@ public class FlexibleArray<T> {
 	 */
 
 	public void add(T element) {
-		
+
 		// paso 0: check if we have reached to the last position
 
 		// if true, we have to expand the capacity of the array
@@ -44,8 +44,8 @@ public class FlexibleArray<T> {
 			for (int i = 0; i < newArray.length; i++) {
 				newArray[i] = elements[i];
 			}
-			
-			elements = newArray;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+			elements = newArray;
 		}
 
 		// paso 1: add the element to the last free position of the array
@@ -59,7 +59,10 @@ public class FlexibleArray<T> {
 	 * @param i
 	 */
 	public void remove(int i) {
+		elements[i] = null;
+		for (int j = 0; j < 5; j++) {
 
+		}
+		size--;
 	}
-
 }
