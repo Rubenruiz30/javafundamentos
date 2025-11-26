@@ -7,8 +7,7 @@ import java.util.Random;
 
 import oopmodeling.Planet;
 /**
- * 
- *@author david
+ * *@author david
  *@author Rubén
  *21 nov 2025
  */
