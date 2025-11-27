@@ -1,38 +1,27 @@
 package oopmodeling.addressbook;
 
-/**
- * This class is in charge of administration of 
- * a group of contact
- *@author Rubén
- *26 nov 2025
- */
-
 import java.util.Scanner;
-
 import datastructure.FlexibleArray;
 
 public class AddressBook {
 
-//	Atributes of this class
-	protected FlexibleArray<Contact> contacts;
-	protected Scanner scanner;
+    protected FlexibleArray<Contact> contacts = new FlexibleArray<>();
+    protected Scanner scanner = new Scanner(System.in);
 
-//	 behaves
-	public void showContacts() {
+    public void addContact(Contact c) {
+        contacts.add(c);
+        System.out.println("Contacto añadido correctamente.");
+    }
 
-	}
+    public void showContacts() {
 
-	public void addContact(Contact Contact) {
+        for (int i = 0; i < contacts.size(); i++) {
+            System.out.println("The contacts are:" + contacts.toString());
+        }
+    }
 
-	}
-
-	public void removeContact(String name) {
-
-	}
-
-	public void removeContact(Object name) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void removeContact(String name) {
 
 }
+}
+

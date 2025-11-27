@@ -1,6 +1,5 @@
 package oopmodeling.addressbook;
 
-
 import java.util.Scanner;
 
 public class ContactApp {
@@ -29,8 +28,12 @@ public static void main(String[] args) {
 		else if (option == 1) {
 			
 			addContact();
+		}
+		else if(option == 2) {
+			showcontact();
+		}
 
-	}
+	
 		
 	
 	}
@@ -42,6 +45,13 @@ public static void main(String[] args) {
 	
 	
 	
+	
+}
+
+
+private static void showcontact() {
+	System.out.println("The contct of the list are: " );
+	addressBook.showContacts();
 	
 }
 
@@ -58,12 +68,12 @@ private static void addContact() {
     System.out.print("Introduce the email: ");
     String email = scanner.nextLine();
 //	2 create an object of "contact" encapsulating all the data passed in the first step
-    
+    Contact object1 = new Contact(name, phone, email);
 
  
 //	3 Add the new object to the contact array
+   addressBook.addContact(object1);
    
-
 
 }
 

@@ -1,68 +1,61 @@
 package datastructure;
 
-/*
-* This is a class that represent an extensible array
-* An aaray has a fixed capacity, when ranching the end
-* of the array, we have to expand it automaticaly*/
 public class FlexibleArray<T> {
-	private T[] elements;
-	private static final int initial_capacity = 5;
-	private int size = 0;
-	private int expansion_facor = 40;
 
-//the variable to sotore how many elemets we have added to the array
-	public FlexibleArray() {
-		elements = (T[]) new Object[initial_capacity];
-	}
+    private T[] elements;
+    private static final int initial_capacity = 5;
+    private int size = 0;   
+    private int expansion_factor = 40;
 
-	public int size() {
+    public FlexibleArray() {
+        elements = (T[]) new Object[initial_capacity];
+    }
 
-		return elements.length;
-	}
+    public FlexibleArray(int capacity) {
+        if (capacity <= 0) capacity = initial_capacity;
+        elements = (T[]) new Object[capacity];
+    }
 
-	public FlexibleArray(int size) {
-		if (size <= 0) {
+    // Devuelve cuántos elementos reales hay
+    public int size() {
+        return size;
+    }
 
-			size = initial_capacity;
-		}
-		elements = (T[]) new Object[size];
-	}
-	/*
-	 * add an element to the array at its last position
-	 * 
-	 * @param e
-	 */
+    // Devuelve 1 elemento por índice
+    public T get(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException("Index: " + index);
+        return elements[index];
+    }
 
-	public void add(T element) {
+    // Añade un elemento
+    public void add(T element) {
+        if (size == elements.length) {
+            expandArray();
+        }
+        elements[size] = element;
+        size++;
+    }
 
-		// paso 0: check if we have reached to the last position
+    // Expande el array cuando está lleno
+    private void expandArray() {
+        T[] newArray = (T[]) new Object[elements.length + expansion_factor];
+        for (int i = 0; i < size; i++) {
+            newArray[i] = elements[i];
+        }
+        elements = newArray;
+    }
 
-		// if true, we have to expand the capacity of the array
-		if (size == elements.length) {
-			T[] newArray = (T[]) new Object[elements.length + expansion_facor];
-			// copy the elements that from the old array to the new one
-			for (int i = 0; i < newArray.length; i++) {
-				newArray[i] = elements[i];
-			}
+    // Elimina un elemento por índice
+    public void remove(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException("Index: " + index);
 
-			elements = newArray;
-		}
+        for (int i = index; i < size - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
 
-		// paso 1: add the element to the last free position of the array
-		elements[size] = element;
-		size++;
-	}
-
-	/*
-	 * remove an element to the array at its last position
-	 * 
-	 * @param i
-	 */
-	public void remove(int i) {
-		elements[i] = null;
-		for (int j = 0; j < 5; j++) {
-
-		}
-		size--;
-	}
+        elements[size - 1] = null;
+        size--;
+    }
 }
