@@ -20,6 +20,10 @@ public class FlexibleArray<T> {
     public int size() {
         return size;
     }
+    // Devuelve cuántos elementos reales hay
+    public T[] ksdjfldsjkf() {
+        return elements;
+    }
 
     // Devuelve 1 elemento por índice
     public T get(int index) {

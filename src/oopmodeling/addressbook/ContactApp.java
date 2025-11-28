@@ -32,6 +32,9 @@ public static void main(String[] args) {
 		else if(option == 2) {
 			showcontact();
 		}
+		else if (option ==3) {
+			addressBook.removeContact(null);
+		}
 
 	
 		
@@ -49,6 +52,14 @@ public static void main(String[] args) {
 }
 
 
+public static void removeContact() {
+	
+	scanner.next("Introduce el nombre que quieres eliminar");
+	
+    
+
+    System.out.println("No se ha encontrado ningún contacto con ese nombre.");
+}
 private static void showcontact() {
 	System.out.println("The contct of the list are: " );
 	addressBook.showContacts();
@@ -67,8 +78,10 @@ private static void addContact() {
 
     System.out.print("Introduce the email: ");
     String email = scanner.nextLine();
+    System.out.println("introduce tu apellido");
+    String surname = scanner.nextLine();
 //	2 create an object of "contact" encapsulating all the data passed in the first step
-    Contact object1 = new Contact(name, phone, email);
+    Contact object1 = new Contact(name, phone, email, surname);
 
  
 //	3 Add the new object to the contact array

@@ -12,6 +12,12 @@ public class Control {
 		int result;
 		result = num1 - num2;
 		System.out.println(result);
+	
+		/* 
+		 * tHE FOLLOWING THE CODE SNIPPET GIVE US THE SAME RESULT
+		 * but the control flow is different, in the first one
+		 * only one of the ifs will be executed, but in the
+		 * second one, all ifs will be checked*/
 		if (result > 0) {
 			System.out.println("El numero que tienes es mayor que 0");
 		} 
@@ -21,6 +27,16 @@ public class Control {
 		else {
 			System.out.println("El numero es menor que 0");
 		}
+		if (result > 0) {
+			System.out.println("El numero que tienes es mayor que 0");
+		} 
+		if (result < 0) {
+		System.out.println("El numero es igual a 0");
+	}
+		else {
+			System.out.println("El numero es menor que 0");
+		}
+	
 	
 	
 	

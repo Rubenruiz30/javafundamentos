@@ -15,13 +15,35 @@ public class AddressBook {
 
     public void showContacts() {
 
+    	System.out.println("Los contactos son:");
         for (int i = 0; i < contacts.size(); i++) {
-            System.out.println("The contacts are:" + contacts.toString());
+            Contact c = contacts.get(i); 
+            System.out.println((i + 1) + ". " + c.toString()); 
         }
     }
 
     public void removeContact(String name) {
+      
 
-}
-}
+        // Muestra los contactos de la agenda
+        showContacts();
+
+        System.out.print("Número del contacto a eliminar: ");
+
+        // Leemos el número que introduce el usuario
+        int index = scanner.nextInt();
+        scanner.nextLine(); // limpiamos el salto de línea
+
+        // Comprobamos que el índice está en rango
+        if (index > 0 && index <= contacts.size()) {
+            Contact c = contacts.get(index - 1); // obtenemos el contacto elegido
+            contacts.remove(index - 1);          // lo eliminamos del FlexibleArray
+            System.out.println("Contacto \"" + c.getName() + "\" eliminado correctamente.");
+        } else {
+            System.out.println("Índice inválido.");
+        }
+    }
+   }
+
+
 
