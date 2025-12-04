@@ -12,12 +12,14 @@ public class FileOperation {
 
         // Archivo dentro de esa carpeta
         File directory = new File(folderPath);
-        File file = new File(directory, "user.log");
+        File file = new File(directory, "/logs/user.log");
 
         System.out.println("Directorio de trabajo: " + System.getProperty("user.dir"));
 
         createPath(directory);
         createFile(file);
+        File absolutedirFile = new File(System.getProperty("use.dir") + "/logs/user.log");
+        absolutedirFile.mkdir();
     }
 
     private static void createPath(File directory) {
