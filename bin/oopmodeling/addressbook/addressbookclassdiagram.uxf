@@ -4,93 +4,140 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
+      <x>840</x>
+      <y>20</y>
+      <w>200</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::oopmodeling.addressbook 
+class: Contact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+{Some Properties}
+--
+-id: Long
+name: String
+phone: String
+email: String
+address: String
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
++ Contact(name:String, phone:String, email:String, surname:String)
++getPhone_number() : String
++setPhone_number(phone_number:String) :void
++getName() : String
++setName(name:String) :void
++getSurname() : String
++setSurname(surname:String) : void
++getEmail() :String
++setEmail(email:String) : void
++toString() : String
+
+--
+Responsibilities
+-- Almacenar los datos del contacto (nombre, apellido, teléfono, email).
+*-- Proporcionar una representación en texto (toString) para mostrar el contacto al usuario.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
       <y>10</y>
-      <w>210</w>
-      <h>190</h>
+      <w>260</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
-Package::oopmodeling.addressbook                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Package::oopmodeling.addressbook
+class: contactApp
 {Some Properties}
 --
 -id: Long
 _-ClassAttribute: Long_
++addressbook : addressbook(static, final)
++scanner : Scanner(static, final)
+
 --
 #Operation(i: int): int
 /+AbstractOperation()/
++main
++showmenu() : void
++addContact() : void
++showContact() : void
++removeContact() : void
 --
 Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes>
+-- Ejecutar el método main() y arrancar la aplicación
+--Solicitar datos al usuario para crear nuevos contactos
+*-- Mostrar el menú y recoger las opciones del usuario.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>10</y>
-      <w>210</w>
-      <h>190</h>
+      <x>330</x>
+      <y>260</y>
+      <w>490</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
-Package::FatClass
+Package::oopmodeling.addressbook
+class: AddressBook
 {Some Properties}
 --
 -id: Long
 _-ClassAttribute: Long_
+contact :FlexibleArray&lt;contact&gt;
+scanner : Scanner
 --
 #Operation(i: int): int
 /+AbstractOperation()/
++addContact( c:Contact) : void
++showContact() : void
++removwContact(name:String) : void
 --
 Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes>
+-- Añadir, mostrar y eliminar contactos
+-- Controlar la interacción con el usuario en operaciones como eliminar
+*-- *Facilitar búsquedas y operaciones sobre la lista.</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
-      <y>250</y>
-      <w>210</w>
-      <h>190</h>
+      <x>630</x>
+      <y>30</y>
+      <w>140</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
-Package::FatClass
+Package::datasructur
+class: FlexibleArray&lt;T&gt;
 {Some Properties}
 --
 -id: Long
 _-ClassAttribute: Long_
++elements :T[]
++initial_capacity : int(static, final)
++size : int
++expansion_factor: int
 --
 #Operation(i: int): int
 /+AbstractOperation()/
++ FlexibleArray()
++ FlexibleArray(capacity:int)
++ size() : int
++ ksdjfldsjkf() : T[]
++ get(index:int) : T
++ add(element:T) : void
+- expandArray() : void
++ remove(index:int) : void
 --
 Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>300</x>
-      <y>250</y>
-      <w>210</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
-Package::FatClass
-{Some Properties}
---
--id: Long
-_-ClassAttribute: Long_
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
-*-- Resp2*</panel_attributes>
+-- Gestionar un array cuya capacidad aumenta automáticamente cuando se llena
+--Controlar el tamaño actual de elementos almacenados
+*-- Permitir añadir, obtener y eliminar elementos</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
