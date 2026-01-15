@@ -1,7 +1,7 @@
 package oopmodeling.contact;
 import datastructure.FlexibleArray;
 
-public class collage_list {
+public class Collage_list {
 
     public static class Alumno {
         String nombre;
@@ -11,7 +11,7 @@ public class collage_list {
             this.nombre = nombre;
             this.nota1 = -1;
             this.nota2 = -1;
-            this.nota3 = -1;
+            this.nota3 = -1; 
         }
 
         public double media() {

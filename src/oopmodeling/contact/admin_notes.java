@@ -2,12 +2,12 @@ package oopmodeling.contact;
 
 import java.util.Scanner;
 
-public class admin_notes {
+public class Admin_notes {
 
     public static void main(String[] args) {
 
-        collage_list lista = new collage_list();
-        add_notes acciones = new add_notes(lista);
+        Collage_list lista = new Collage_list();
+        AddNotes acciones = new  AddNotes(lista);
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -53,7 +53,7 @@ public class admin_notes {
                 } else {
                     System.out.println("\n--- LISTA DE ALUMNOS ---");
                     for (int i = 0; i < lista.size(); i++) {
-                        collage_list.Alumno a = lista.getAlumno(i);
+                        Collage_list.Alumno a = lista.getAlumno(i);
                         System.out.println(a.nombre +
                                 " | Nota1: " + a.nota1 +
                                 " | Nota2: " + a.nota2 +
