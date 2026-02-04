@@ -77,7 +77,7 @@ public class FileOperation {
     }
 
     // ====== EXTRA: MOSTRAR ARCHIVO COMPLETO (opcional) ======
-    public static void showFile() {
+    public static void showFiles() {
         createPath(DIRECTORY);
         createFile(CONTACTS_FILE);
 
@@ -142,7 +142,7 @@ public class FileOperation {
         }
 
         // (Opcional) Mostrar el archivo entero
-        showFile();
+        showFiles();
     }
 }
 
