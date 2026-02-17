@@ -1,7 +1,12 @@
 package datastructure.list;
 
+import java.security.DrbgParameters.NextBytes;
+
+
 public class List<E> {
 
+private static final char[] List = null;
+private static int length;
 //	The refernces to the last element in the list
 
 	private Node<E> last;
@@ -38,17 +43,42 @@ public class List<E> {
 	public Node<E> getFirst() {
 		return first;
 	}
+	public void printList() {
+
+	    Node<E> nodo = first;  
+
+	    while (nodo != null) { 
+	        System.out.println(nodo.data); 
+	        nodo = nodo.next;         
+	    }
+
+	System.out.println(nodo.next);
+	}
+	
+
 
 }
 
 class Node<E> {
+	public E getData() {
+		return data;
+	}
+	public void setData(E data) {
+		this.data = data;
+	}
+	public Node getNext() {
+		return next;
+	}
+	public void setNext(Node next) {
+		this.next = next;
+	}
 	public Node(E e) {
 		// TODO Auto-generated constructor stub
 		data = e;
 	}
 
 	// The data stored in a mode of the list
-	private E data;
+	public E data;
 ///each node needsto point to the next node, we use this variable to do it
 	protected Node next;
 }
