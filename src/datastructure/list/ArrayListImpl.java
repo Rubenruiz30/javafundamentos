@@ -1,5 +1,5 @@
 package datastructure.list;
 
-public class List {
+public class ArrayListImpl {
 
 }
