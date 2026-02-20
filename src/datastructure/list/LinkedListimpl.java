@@ -1,23 +1,41 @@
 package datastructure.list;
 
-import java.security.DrbgParameters.NextBytes;
-
-public class Listimpl<E> {
+/**
+ * interface oriented development: we use interfaces to
+ * abstract different solution
+ * In a interface, you can declare method, but without
+ * implementation, in other words, without method body,
+ *  or only with method signature(firm). As each method
+ *  could have multiples different implementation in different
+ *  class
+ *@author david
+ *@author Rubén
+ *20 feb 2026
+ *@param <E>
+ */
+public class LinkedListimpl<E> implements List <E> {
 
 	private static final char[] List = null;
 	private static int length;
-//	The refernces to the last element in the list
+//	The references to the last element in the list
 
 	private Node<E> last;
-//	 The refences o the first element of ther list
+//	 The references o the first element of there list
 
 	private Node<E> first;
 
-	public void add(Node<E> node) throws Exception {
+	public void add(E e)  {
 // 1	check the parameter if it valid
-		if (node == null) {
-			throw new Exception("you cannot pass anull node to the list");
+		if (e == null) {
+			try {
+				throw new Exception("you cannot pass anull node to the list");
+
+			} catch (Exception e2) {
+				
+				// TODO: handle exception
+			}
 		}
+		Node<E> node = new Node <E>(e);
 //	2	 add the node to the tail of the list	
 //	2.1	Check first if the head element is null
 //		is the case of null, it means the list is empty
@@ -59,6 +77,31 @@ public class Listimpl<E> {
 			nodo = nodo.next;
 		}
 
+	}
+
+	
+	@Override
+	public void remove(Object e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addHead(E e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeTail(E e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeHead(E e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
