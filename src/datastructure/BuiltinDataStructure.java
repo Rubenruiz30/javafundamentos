@@ -49,7 +49,15 @@ public class BuiltinDataStructure {
 		queue.add(123);
 		queue.add(12);
 		queue.add(12300);
+// poll is the system which the fist element of the  queue are eliminated
 		System.out.println(queue.poll());
+		Queue<String> printedTask = new LinkedList<>();
+		printedTask.add("task 1");
+		printedTask.add("task 2");
+		printedTask.add("task 3");
+		System.out.println(printedTask.peek());
+		System.out.println(printedTask.poll());
+		System.out.println(printedTask.poll());
 		
 	}
 }
