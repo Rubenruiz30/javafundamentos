@@ -5,10 +5,12 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
+import datastructure.FlexibleArray;
 import oopmodeling.addressbook.AddressBook;
+import oopmodeling.addressbook.Contact;
 
 public class reflectionTest {
-	public static void main(String[] args) throws ClassNotFoundException {
+	public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
 		Class<AddressBook> clsClass = AddressBook.class;
 		Class<AddressBook> cls2 = (Class<AddressBook>) new AddressBook().getClass();
 		Class<?> cls3 = Class.forName("oopmodeling.addressbook.AddressBook");
@@ -19,17 +21,22 @@ public class reflectionTest {
 
 	}
 
-	private static void manipulatedObject(AddressBook addressBook) {
+	private static void manipulatedObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException {
 		Class<?> clsClass = addressBook.getClass();
 		Field [] fields = clsClass.getDeclaredFields();
 		
 		try {
-			Field field = clsClass.getDeclaredField("Contact");
+			
+			Field field = clsClass.getDeclaredField("contacts");
+			field.setAccessible(true);
 //			read the value of a specified field
 			System.out.println(addressBook.getContacts());
+			// change the access modifier from private to public
+			System.out.println(field.get(addressBook));
+			
 //			modify the value of a field of the object
 			try {
-				field.set(fields, field);
+				field.set(addressBook, new FlexibleArray<>());
 			} catch (IllegalArgumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
