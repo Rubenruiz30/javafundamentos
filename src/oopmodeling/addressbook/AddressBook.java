@@ -22,6 +22,14 @@ public class AddressBook {
 		}
 	}
 
+	public FlexibleArray<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(FlexibleArray<Contact> contacts) {
+		this.contacts = contacts;
+	}
+
 	public void removeContact(String name) {
 
 		// Muestra los contactos de la agenda
