@@ -7,7 +7,6 @@ import java.lang.reflect.Parameter;
 
 import datastructure.FlexibleArray;
 import oopmodeling.addressbook.AddressBook;
-import oopmodeling.addressbook.Contact;
 
 public class reflectionTest {
 	public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
@@ -18,7 +17,21 @@ public class reflectionTest {
 
 		AddressBook addressBook = new AddressBook();
 		manipulatedObject(addressBook);
+		invokeMethodsOfAnObject( addressBook);
 
+	}
+
+	private static void invokeMethodsOfAnObject(Object obj) {
+		Class<?> cls = obj.getClass();
+		try {
+			Method method = cls.getDeclaredMethod("getContacts", String.class);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private static void manipulatedObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException {
@@ -26,10 +39,12 @@ public class reflectionTest {
 		Field [] fields = clsClass.getDeclaredFields();
 		
 		try {
-			
+			//potentially we may get no such field exception if
+			// we pass a field name that does not exist 
 			Field field = clsClass.getDeclaredField("contacts");
 			field.setAccessible(true);
 //			read the value of a specified field
+			//
 			System.out.println(addressBook.getContacts());
 			// change the access modifier from private to public
 			System.out.println(field.get(addressBook));
